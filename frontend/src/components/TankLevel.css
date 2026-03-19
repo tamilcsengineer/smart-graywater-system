@@ -1,0 +1,133 @@
+.tank-container {
+  padding: 40px;
+  color: white;
+}
+
+/* WORKFLOW */
+.workflow {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-top: 40px;
+}
+
+/* SOURCE BOX */
+.box {
+  padding: 20px;
+  background: #13253f;
+  border-radius: 10px;
+}
+
+/* PIPE */
+.pipe {
+  width: 90px;
+  height: 10px;
+  background: #1a2a40;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* FLOW */
+.flow {
+  width: 100%;
+  height: 100%;
+}
+
+.flow.active {
+  background: linear-gradient(90deg, #36c2ff, transparent);
+  animation: move 1s linear infinite;
+}
+
+@keyframes move {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
+}
+
+/* PUMP */
+.pump {
+  font-size: 2rem;
+}
+
+.pump.on {
+  color: #36c2ff;
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* TANK */
+.tank {
+  width: 120px;
+  height: 200px;
+  border: 3px solid #36c2ff;
+  position: relative;
+}
+
+.water {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #36c2ff;
+  transition: height 0.5s;
+}
+
+.tank.second .water {
+  background: linear-gradient(180deg, #00ffa6, #36c2ff);
+}
+
+/* USED WATER */
+.used-water {
+  width: 130px;
+  height: 90px;
+  background: #13253f;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.used-flow {
+  width: 80%;
+  height: 8px;
+  margin-top: 8px;
+  background: #1a2a40;
+  border-radius: 10px;
+}
+
+.used-flow.active {
+  background: linear-gradient(90deg, #36c2ff, #00ffa6);
+  animation: move 1s linear infinite;
+}
+
+/* SENSOR */
+.sensor-box {
+  background: #13253f;
+  padding: 15px;
+  border-radius: 10px;
+  min-width: 120px;
+}
+
+/* RESULT */
+.result-box {
+  background: #0f2a1f;
+  padding: 15px;
+  border-radius: 10px;
+  border-left: 5px solid #00ffa6;
+  min-width: 150px;
+}
+
+/* BUTTON */
+.controls button {
+  margin-top: 30px;
+  padding: 12px 20px;
+  border: none;
+  background: #36c2ff;
+  border-radius: 8px;
+  cursor: pointer;
+}

@@ -1,0 +1,256 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #081426;
+  color: white;
+}
+
+.monitoring-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #07111f 0%, #0d1b2f 100%);
+}
+
+.top-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 40px;
+  background: linear-gradient(90deg, #081426, #12233e);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #36c2ff;
+}
+
+.nav-links {
+  display: flex;
+  gap: 18px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+  background: rgba(54, 194, 255, 0.18);
+  color: #36c2ff;
+}
+
+.monitoring-container {
+  padding: 40px;
+}
+
+.monitoring-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.monitoring-header h1 {
+  margin: 0;
+  font-size: 2.4rem;
+}
+
+.monitoring-header p {
+  margin-top: 10px;
+  color: #b7c7d9;
+  font-size: 1rem;
+}
+
+.live-indicator {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(54, 194, 255, 0.12);
+  color: #36c2ff;
+  padding: 10px 16px;
+  border-radius: 30px;
+  font-weight: 600;
+}
+
+.pulse-dot {
+  width: 10px;
+  height: 10px;
+  background: #36c2ff;
+  border-radius: 50%;
+  animation: pulse 1.4s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.6);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+}
+
+.source-tabs {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.tab {
+  background: #16263f;
+  color: white;
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 12px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.tab:hover {
+  background: #1e3558;
+}
+
+.active-tab {
+  background: #1c4d72;
+  color: #36c2ff;
+  border-color: #36c2ff;
+}
+
+.sensor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 22px;
+  margin-bottom: 30px;
+}
+
+.sensor-card {
+  background: linear-gradient(180deg, #13253f, #102035);
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sensor-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(54, 194, 255, 0.14);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.card-top h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.sensor-value {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.sensor-value span {
+  font-size: 1rem;
+  color: #9bb3c9;
+}
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.status-badge.safe {
+  background: rgba(0, 200, 120, 0.15);
+  color: #33d17a;
+}
+
+.status-badge.moderate {
+  background: rgba(255, 193, 7, 0.15);
+  color: #ffd166;
+}
+
+.status-badge.warning {
+  background: rgba(255, 82, 82, 0.16);
+  color: #ff7b7b;
+}
+
+.summary-panel {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.summary-card {
+  background: linear-gradient(180deg, #13253f, #102035);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.summary-card h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.summary-row:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .top-navbar {
+    flex-direction: column;
+    gap: 18px;
+    padding: 20px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .monitoring-container {
+    padding: 20px;
+  }
+
+  .monitoring-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .monitoring-header h1 {
+    font-size: 2rem;
+  }
+}

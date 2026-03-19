@@ -1,0 +1,38 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: #0d1b2f;
+  color: white;
+}
+
+.logo {
+  color: #36c2ff;
+}
+
+/* NAV LINKS */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+/* HOVER */
+.nav-item:hover {
+  background: #1c3d5a;
+}
+
+/* 🔥 ACTIVE LINK */
+.nav-item.active {
+  background: #36c2ff;
+  color: black;
+}

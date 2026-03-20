@@ -4,8 +4,7 @@ import "./AnalyticsDashboard.css";
 export default function AnalyticsDashboard() {
 
   const [reuse, setReuse] = useState(120);
-  const [garden, setGarden] = useState(60);
-  const [cleaning, setCleaning] = useState(80);
+  
   const [drain, setDrain] = useState(40);
 
   const [running, setRunning] = useState(false);
@@ -30,6 +29,21 @@ export default function AnalyticsDashboard() {
     const interval = setInterval(simulate, 2000);
     return () => clearInterval(interval);
   }, [running]);
+
+
+
+
+
+
+  React.useEffect(() => {
+  // your effect code here
+}, [simulate]); // Add 'simulate' to dependencies
+
+
+
+
+
+
 
   // STATUS
   const getStatus = () => {
